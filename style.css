@@ -1,0 +1,450 @@
+:root {
+    --color-background: #1D0E27;
+    --color-accent: #8E164D;
+    --color-highlight: #FF6E40;
+    --color-overlay: #3E185A;
+    --color-soft-color: #FFB1B1;
+    --color-text-color: #FDFBFF;
+    --color-text-boder: #4C2A85;
+    --color-emphasis: #FFC857;
+    --color-hover: #5A9BD4;
+    --color-bright: #FFFFFF;
+    --color-muted: #A59BCB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-image: url(/assets/bg1.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: var(--color-text-color);
+    font-family: 'Fira Code', monospace;
+}
+
+a, ul {
+    list-style: none;
+    text-decoration: none;
+    color: var(--color-light);  
+}
+
+.content-wrapper {
+    padding: 1rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* -------- Header --------- */
+
+header {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-container {
+    width: fit-content;
+    padding: 0.3rem;
+    border-radius: 0.25rem;
+    background: var(--color-background);
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--color-muted);
+}
+
+.nav-container ul {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-container li {
+    padding: 0.3rem 1rem;
+    background: var(--color-overlay) ;
+    border-radius: 0.25rem;
+}
+
+.social-links ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.social-links ul li:hover {
+    color: var(--color-soft-color);
+}
+
+/* -------- End of Header --------- */
+
+/* -------- Window --------- */
+
+.windows-container {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.8rem;
+    flex: 1;
+    grid-template-columns: 1fr repeat(3, 250px);
+    grid-template-rows: repeat(3, 1fr) 50px;
+    grid-template-areas: 
+        "profile project-1 project-2 project-3"
+        "profile project-4 project-5 project-6"
+        "profile project-7 project-8 project-9"
+        "profile project-show project-show project-show"
+    ;
+}
+
+.windows-container .window {
+    font-size: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(29, 14, 39, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.window > * {
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.window:hover {
+    border: 2px solid var(--color-text-boder);
+    backdrop-filter: blur(50px);
+}
+
+.window:hover * {
+    opacity: 1;
+}
+
+/* -------- End of Window --------- */
+
+.profile {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 400px 1fr;
+    grid-template-areas: 
+        "profile-image profile-details"
+        "profile-terminal profile-terminal"
+    ;
+    padding: 1rem;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid var(--color-text-color);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+    display: block;
+}
+
+.circle-row {
+    display: flex;
+    gap: 1rem; 
+    padding: 0.2rem;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+/* -------- Profile Info --------- */
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 2px solid var(--color-text-color);
+}
+
+.profile-info {
+    display: flex;
+    gap: 0.5rem;
+    overflow: hidden;
+    margin-left: 1rem;
+}
+
+.profile-info .info-labels {
+    border: 1px solid var(--color-text-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    height: fit-content;
+}
+
+.profile-info .info-inputs {
+    padding: 1rem;
+    height: fit-content;
+}
+
+.profile-info .info-inputs img {
+    height: 25px;
+}
+
+.info-labels ul,
+.info-inputs ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    white-space: nowrap; 
+    list-style: none;
+}
+
+.profile-summary {
+    margin: 2rem auto;
+}
+
+/* -------- Profile Terminal --------- */
+
+.profile-terminal {
+    padding: 2rem 1rem;
+    font-family: monospace;
+    border-radius: 8px;
+    overflow-y: auto;
+    max-height: 300px;
+    cursor: text; 
+}
+
+.terminal-line {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+#terminal-input {
+    font-family: 'Fira Code', monospace;
+    background: transparent;
+    border: none;
+    color: var(--color-text-color);
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+    margin-left: 0.5rem;
+}
+
+/* -------- END Profile Info --------- */
+
+.project {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: 100%; 
+}
+
+.project p {
+    margin: auto;
+}
+
+.project img {
+    flex-grow: 1;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 1rem;
+}
+
+/* -------- MEDIA QUERIES --------- */
+
+@media (max-width: 1610px){
+
+    .project-7, 
+    .project-8, 
+    .project-9 {
+        display: none;
+    }
+
+    .windows-container {
+        display: grid;
+        flex: 1;
+        grid-template-columns: 1fr repeat(2, 200px);
+        grid-template-rows: repeat(3, 1fr) 50px;
+        grid-template-areas: 
+            "profile project-1 project-2"
+            "profile project-3 project-4"
+            "profile project-5 project-6"
+            "profile project-show project-show"
+        ;
+    }
+}
+
+@media (max-width: 1440px) {
+    .project-5,
+    .project-6,
+    .project-7, 
+    .project-8, 
+    .project-9 {
+        display: none;
+    }
+    .windows-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 250px 50px;
+        grid-template-areas: 
+            "profile profile profile profile"
+            "project-1 project-2 project-3 project-4"
+            "project-show project-show project-show project-show"
+        ;
+    }
+
+    .windows-container .window {
+        font-size: 0.8rem;
+    }   
+
+    .profile {
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: auto 250px;
+        grid-template-areas: 
+            "profile-image profile-details"
+            "profile-terminal profile-terminal"
+        ;
+        padding: 1rem;
+    }
+
+    .profile-info .info-inputs img {
+        height: 15px;
+    }
+
+    @media (min-width: 860px) {
+        .windows-container .window {
+            font-size: 1rem;
+        }   
+    }
+}
+
+@media (max-width: 962px) {
+    .header-message {
+        display: none;
+    }   
+}
+
+@media (max-width: 767px) {
+
+    .project-5,
+    .project-6,
+    .project-7, 
+    .project-8, 
+    .project-9 {
+        display: block;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .header-message {
+        display: block;
+    }   
+
+    .windows-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr repeat(9, 300px) 50px;
+        grid-template-areas: 
+            "profile"
+            "project-1"
+            "project-2"
+            "project-3"
+            "project-4"
+            "project-5"
+            "project-6"
+            "project-7"
+            "project-8"
+            "project-9"
+            "project-show"
+        ;
+    }
+
+    .windows-container .window {
+        font-size: 0.6rem;
+    }
+
+    .profile {
+        grid-template-columns: auto;
+        grid-template-rows:  repeat(2, auto) 150px;
+        grid-template-areas: 
+            "profile-image"
+            "profile-details"
+            "profile-terminal"
+        ;
+        gap: 1rem;
+    }
+
+    .profile-image img {
+        width: 50%;
+        height: 100%;
+        margin: auto;
+    }
+
+    .profile-details {
+        align-items: center;
+    }
+
+    .info-labels ul,
+    .info-inputs ul {
+        display: flex;
+        gap: 0.2rem;
+    }
+
+    .profile-info {
+        margin: 0;
+    }
+
+    .profile-info .info-inputs img {
+        height: 12px;
+    }
+
+    .profile-summary {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .profile-terminal {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .project {
+        display: flex;
+        flex-direction: row;
+    }
+
+}
+
+@media (max-width: 410px) {
+
+    .info-labels ul,
+    .info-inputs ul {
+        font-size: 0.5rem;
+    }
+
+    @media (min-width: 480px) {
+        .windows-container .window {
+            font-size: 0.7rem;
+        }   
+    }
+
+    @media (min-width: 568px) {
+        .windows-container .window {
+            font-size: 1rem;
+        }   
+    }
+}
