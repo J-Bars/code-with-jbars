@@ -222,6 +222,7 @@ header {
     font-family: monospace;
     border-radius: 8px;
     overflow-y: auto;
+    min-height: 100px;
     max-height: 350px;
     cursor: text; 
 }
@@ -237,9 +238,9 @@ header {
     background: transparent;
     border: none;
     color: var(--color-text-color);
-    font-size: 1rem;
     outline: none;
     margin-left: 1rem;
+    font-size: 1rem;
 }
 
 .profile-terminal .output {
@@ -331,10 +332,19 @@ pre {
         height: 15px;
     }
 
+    input {
+        font-size: 0.8rem;
+    }
+
     @media (min-width: 860px) {
         .windows-container .window {
             font-size: 1rem;
-        }   
+        }
+
+        input {
+            font-size: 1rem;
+        }
+
     }
 }
 
@@ -429,6 +439,10 @@ pre {
         padding-bottom: 0.5rem;
     }
 
+    input {
+        font-size: 0.6rem;
+    }
+
     .project {
         display: flex;
         flex-direction: row;
@@ -443,6 +457,10 @@ pre {
         font-size: 0.5rem;
     }
 
+    input {
+        font-size: 0.5rem;
+    }
+
     @media (min-width: 480px) {
         .windows-container .window {
             font-size: 0.7rem;
@@ -452,6 +470,6 @@ pre {
     @media (min-width: 568px) {
         .windows-container .window {
             font-size: 1rem;
-        }   
+        }
     }
 }
