@@ -222,7 +222,7 @@ header {
     font-family: monospace;
     border-radius: 8px;
     overflow-y: auto;
-    max-height: 300px;
+    max-height: 350px;
     cursor: text; 
 }
 
@@ -232,15 +232,22 @@ header {
     margin-top: 0.5rem;
 }
 
-#terminal-input {
+ input {
     font-family: 'Fira Code', monospace;
     background: transparent;
     border: none;
     color: var(--color-text-color);
     font-size: 1rem;
     outline: none;
-    width: 100%;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
+}
+
+.profile-terminal .output {
+    margin: 2rem;
+}
+
+pre {
+    color: #0ff;
 }
 
 /* -------- END Profile Info --------- */
@@ -312,7 +319,7 @@ header {
 
     .profile {
         grid-template-columns: 1fr 1.5fr;
-        grid-template-rows: auto 250px;
+        grid-template-rows: 500px 300px;
         grid-template-areas: 
             "profile-image profile-details"
             "profile-terminal profile-terminal"
