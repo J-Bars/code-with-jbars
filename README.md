@@ -18,7 +18,7 @@ This portfolio is **heavily inspired by the [Hyprland](https://github.com/hyprwm
 
 I recently discovered Hyprland and immediately loved its minimal yet powerful tiling layout. Using it daily has significantly boosted my productivity — so I decided to bring that same clean and organized feel to my web portfolio.
 
-![Hyprland Demo](assets/workspace.gif)
+![Hyprland Demo](assets/workspace.jpg)
 
 ---
 
